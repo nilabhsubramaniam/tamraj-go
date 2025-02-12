@@ -2,7 +2,9 @@ package main
 
 import "fmt"
 
-var y int
+var x int = 40
+
+const y int = 42
 
 func main() {
 	// printing value for hexadecimal and binary
@@ -14,7 +16,8 @@ func main() {
 	// fmt.Printf("%v  \t  %b \t %#X \n", f, f, f)
 	// fmt.Printf("%v  \t  %b \t %#X \n", e, e, e)
 	// fmt.Printf("%v  \t  %b \t %#X \n", d, d, d)
-	fmt.Println(y)
+	fmt.Printf("The value of x %v and the type of x %T \n", x, x)
+	fmt.Printf("The value of y %v and the type of y %T \n", y, y)
 	z := 42
 	fmt.Println(z)
 	fmt.Println("Hello, World!")
