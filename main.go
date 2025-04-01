@@ -63,4 +63,12 @@ func main() {
 	for i := 0; i < 5; i++ {
 		fmt.Printf("counting to five: %v \t first for loop \n ", i)
 	}
+
+	// nested loop
+	for i := 0; i < 10; i++ {
+		fmt.Println("----")
+		for j := 0; j < 10; j++ {
+			fmt.Printf("outer loop %v \t inner loop %v\n", i, j)
+		}
+	}
 }
