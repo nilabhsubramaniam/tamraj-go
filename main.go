@@ -71,4 +71,66 @@ func main() {
 			fmt.Printf("outer loop %v \t inner loop %v\n", i, j)
 		}
 	}
+
+	// create a programm that has a loop that prints every number from 0 to 99
+
+	for i := 0; i <= 99; i++ {
+		fmt.Println((i))
+	}
+
+	// switch case
+
+	for i := 0; i < 42; i++ {
+		X := rand.Intn(5)
+
+		switch X {
+		case 0:
+			fmt.Println("X is 0")
+		case 1:
+			fmt.Println("X is 1")
+		case 2:
+			fmt.Println("X is 2")
+		case 3:
+			fmt.Println("X is 3")
+		case 4:
+			fmt.Println("X is 4")
+		}
+
+	}
+
+	// use modulus and print odd numbers using continiue
+	for i := 0; i <= 100; i++ {
+
+		// printing the i value when it is odd
+		if i%2 != 0 {
+
+			fmt.Println("odd number is ", i)
+		}
+	}
+
+	// For range loop
+
+	xi := []int{42, 43, 44, 45, 46, 47}
+	for i, v := range xi {
+		fmt.Printf("index %v \t value  is %v \n", i, v)
+	}
+
+	// map - from range
+	m := map[string]int{
+		"James":  42,
+		"amount": 32,
+	}
+
+	for k, v := range m {
+		fmt.Printf("key  %v \t value is %v\n", k, v)
+	}
+
+	fmt.Println(".......................")
+	for i := 0; i <= 100; i++ {
+
+		if x := rand.Intn(5); x == 3 {
+			fmt.Printf("iteration %v \t x is %v\n", i, x)
+		}
+	}
+
 }
