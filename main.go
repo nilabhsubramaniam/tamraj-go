@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"sort"
 	"time"
 )
 
@@ -164,4 +165,46 @@ func main() {
 		fmt.Printf(" %v -  %v\n", i, v)
 	}
 
+	// Slice make
+	si := []string{"apple", "bananana", "carrot", "dish", "eager"}
+	fmt.Println(si)
+
+	xsi := make([]int, 0, 10)
+	fmt.Println(xsi)
+	fmt.Println(len(xsi))
+	fmt.Println(cap(xsi))
+	xsi = append(xsi, 1, 2, 3, 7, 9, 11, 12, 13, 14, 15)
+	fmt.Println(xsi)
+
+	// slice internals and underlying array
+	n := []float64{3, 1, 4, 2, 7}
+	fmt.Println(medianOne(n))
+	fmt.Println("After medianOne", n)
+
+	siua := []float64{3, 1, 4, 2, 7}
+	fmt.Println(medianTwo(siua))
+}
+
+// uses same underlying array
+// everything is pass by value in go
+// the value is being passed into this function
+// and then assigned to siua
+func medianOne(x []float64) float64 {
+	sort.Float64s(x) // Sort the slice
+	i := len(x) / 2
+	if len(x)%2 == 1 {
+		return x[i/2]
+	}
+	return (x[i-1] + x[i]) / 2
+}
+
+func medianTwo(siua []float64) float64 {
+	n := make([]float64, len(siua))
+	copy(n, siua)    // Copy the slice
+	sort.Float64s(n) // Sort the copy
+	i := len(n) / 2
+	if len(n)%2 == 1 {
+		return n[i/2]
+	}
+	return (n[i-1] + n[i]) / 2
 }
