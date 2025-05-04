@@ -183,6 +183,43 @@ func main() {
 
 	siua := []float64{3, 1, 4, 2, 7}
 	fmt.Println(medianTwo(siua))
+
+	// map introduction
+	am := map[string]int{
+		"Aakasha":    32,
+		"Amabar":     35,
+		"Neelamabar": 43,
+	}
+
+	fmt.Println("the age of Neelamabar was", am["Neelamabar"])
+	fmt.Println("..................................")
+	fmt.Printf("%#v\n", am)
+	an := make(map[string]int)
+	an["sneha"] = 32
+	an["snehal"] = 39
+	fmt.Println(an)
+	fmt.Printf("%#v\n", an)
+
+	fmt.Println(len(an))
+
+	// add element - for range loop over map
+	for k, v := range an {
+		fmt.Printf("key %v \t value is %v\n", k, v)
+	}
+
+	// delete element from map
+	delete(an, "snehal")
+	fmt.Println(an)
+	fmt.Printf("%#v\n", an)
+	fmt.Println(len(an))
+
+	// check if key exists in map
+	v, ok := an["sneha"]
+	if ok {
+		fmt.Printf("key %v exists with value %v\n", "sneha", v)
+	} else {
+		fmt.Printf("key %v does not exist\n", "sneha")
+	}
 }
 
 // uses same underlying array
