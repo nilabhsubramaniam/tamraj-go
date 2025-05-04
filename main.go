@@ -7,6 +7,17 @@ import (
 	"time"
 )
 
+type Person struct {
+	first string
+	last  string
+	age   int
+}
+
+type SecretAgent struct {
+	Person
+	licenseToKill bool
+}
+
 func main() {
 	src := rand.NewSource(time.Now().UnixNano()) // Create a new source
 	rng := rand.New(src)                         // Create a new random generator
@@ -220,6 +231,38 @@ func main() {
 	} else {
 		fmt.Printf("key %v does not exist\n", "sneha")
 	}
+	fmt.Println("..................................")
+	//  struct
+	p1 := Person{
+		first: "John",
+		last:  "Doe",
+		age:   30,
+	}
+
+	p2 := Person{
+		first: "Jane",
+		last:  "Smith",
+		age:   25,
+	}
+
+	fmt.Println("Person 1:", p1)
+	fmt.Println("Person 2:", p2)
+	fmt.Printf("Person 1: %+v\n", p1)
+	fmt.Println(p1.first, p2.first)
+
+	fmt.Println("..................................")
+
+	sa1 := SecretAgent{
+		Person: Person{
+			first: "James",
+			last:  "Bond",
+			age:   40,
+		},
+		licenseToKill: true,
+	}
+
+	fmt.Println(sa1)
+
 }
 
 // uses same underlying array
