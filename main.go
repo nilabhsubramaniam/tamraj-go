@@ -19,6 +19,7 @@ type SecretAgent struct {
 }
 
 func main() {
+	sum(1, 2, 3, 4, 5)
 	src := rand.NewSource(time.Now().UnixNano()) // Create a new source
 	rng := rand.New(src)                         // Create a new random generator
 	ch := make(chan string)
@@ -287,4 +288,15 @@ func medianTwo(siua []float64) float64 {
 		return n[i/2]
 	}
 	return (n[i-1] + n[i]) / 2
+}
+
+// Variadic function
+func sum(nums ...int) int {
+	fmt.Println("Numbers:", nums)
+	total := 0
+	for _, num := range nums {
+		total += num
+	}
+	fmt.Println("Total:", total)
+	return total
 }
