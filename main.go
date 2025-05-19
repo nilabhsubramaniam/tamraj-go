@@ -18,8 +18,26 @@ type SecretAgent struct {
 	licenseToKill bool
 }
 
+// Interface and Polymorphism
+type Shape interface {
+	Area() float64
+	Perimeter() float64
+}
+type Rectangle struct {
+	Width  float64
+	Height float64
+}
+type Circle struct {
+	Radius float64
+}
+
 func main() {
 	sum(1, 2, 3, 4, 5)
+	rectangle := Rectangle{Width: 5, Height: 10}
+	circle := Circle{Radius: 7}
+
+	printShapeInfo(rectangle)
+	printShapeInfo(circle)
 	src := rand.NewSource(time.Now().UnixNano()) // Create a new source
 	rng := rand.New(src)                         // Create a new random generator
 	ch := make(chan string)
@@ -299,4 +317,20 @@ func sum(nums ...int) int {
 	}
 	fmt.Println("Total:", total)
 	return total
+}
+
+func (r Rectangle) Area() float64 {
+	return r.Width * r.Height
+}
+func (r Rectangle) Perimeter() float64 {
+	return 2 * (r.Width + r.Height)
+}
+func (c Circle) Area() float64 {
+	return 3.14 * c.Radius * c.Radius
+}
+func (c Circle) Perimeter() float64 {
+	return 2 * 3.14 * c.Radius
+}
+func printShapeInfo(s Shape) {
+	fmt.Printf("Area: %f, Perimeter: %f\n", s.Area(), s.Perimeter())
 }
