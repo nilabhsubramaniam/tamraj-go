@@ -2,8 +2,7 @@
 # Learning Plan: Generative AI Developer + Backend Developer (Go)
 
 ## Overview
-This learning plan prepares you for two roles: a **Generative AI Developer** (focusing on Large Language Models, AI, and Azure Open AI) and a **Backend Developer** (focusing on Go, scalable backend services, RDBMS, message brokers, event-driven architectures, and cloud deployment). The plan spans **9–15 months**, depending on your pace, with a commitment of **15–20 hours per week**. It includes foundational skills, hands-on projects, portfolio building, and job preparation, tailored for roles in Noida, India, with US shift timings (8:30 PM to 5:30 AM IST).
-
+This learning plan prepares you for two roles: a **Generative AI Developer** (focusing on Large Language Models, AI, and Azure Open AI) and a **Backend Developer** (focusing on Go, scalable backend services, RDBMS, message brokers, event-driven architectures, and cloud deployment). The plan spans **9–15 months**, depending on  pace, with a commitment of **15–20 hours per week**. It includes foundational skills, hands-on projects, portfolio building.
 ---
 
 ## Phase 1: Foundations (1–2 Months)
