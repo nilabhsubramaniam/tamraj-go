@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"math/rand"
+	"os"
 	"sort"
 	"time"
 )
@@ -17,6 +19,7 @@ type SecretAgent struct {
 	Person
 	licenseToKill bool
 }
+
 
 // Interface and Polymorphism
 type Shape interface {
@@ -38,6 +41,7 @@ func main() {
 
 	printShapeInfo(rectangle)
 	printShapeInfo(circle)
+	createFile("output.txt")
 	src := rand.NewSource(time.Now().UnixNano()) // Create a new source
 	rng := rand.New(src)                         // Create a new random generator
 	ch := make(chan string)
@@ -333,4 +337,19 @@ func (c Circle) Perimeter() float64 {
 }
 func printShapeInfo(s Shape) {
 	fmt.Printf("Area: %f, Perimeter: %f\n", s.Area(), s.Perimeter())
+}
+
+func createFile(filename string) (*os.File, error) {
+	file, err := os.Create(filename)
+	if err != nil {
+		log.Fatalf("error creating file: %v", err)
+	
+	}
+	defer file.Close() // Ensure the file is closed when done
+	s:= []byte("Hello, World!\n")
+	_, err = file.Write(s)
+	if err != nil {
+		log.Fatalf("error writing to file: %v", err)
+	}
+	return file, nil
 }
